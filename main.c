@@ -1,4 +1,5 @@
 #include"matrix.h"
+#include<stdio.h>
 int main(void){
 	
 	matrix* ONE = &(matrix){
@@ -22,7 +23,8 @@ int main(void){
 
 	matrix* RES=&(matrix){0};
 
-	if (0 != Mmul(ONE,TWO,RES))
-		Mprint(RES);
+	if (NULL == Mmul(ONE,TWO,RES))
+		printf("ERROR:Dimension Error");
+	Mprint(RES);
 	return 0;
 }

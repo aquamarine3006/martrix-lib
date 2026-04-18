@@ -10,37 +10,28 @@ void Mprint(matrix* mat){
 	printf("\n");
 }
 
-i32 Msum(matrix* x, matrix* y, matrix* z){		
-	if ( ( x->indr != y->indr ) || ( x->indc != y->indc ) ) {
-		printf("dimension mismatch for computing sum!");
-		return 0;
-	}
+matrix* Msum(matrix* x, matrix* y, matrix* z){		
+	if ( ( x->indr != y->indr ) || ( x->indc != y->indc ) ) return NULL;
 	z->indr = x->indr;
 	z->indc = x->indc;
 	for(i32 i=0 ; i<(x->indr) ; i++)
 		for(i32 j=0 ; j<(x->indc) ; j++)
 			z->data[i][j] = x->data[i][j] + y->data[i][j]; 
-	return 1;
+	return x;
 }
 
-i32 Msub(matrix* x, matrix* y, matrix* z){		
-	if ( ( x->indr != y->indr ) || ( x->indc != y->indc ) ) {
-		printf("dimension mismatch for computing sum!");
-		return 0;
-	}
+matrix* Msub(matrix* x, matrix* y, matrix* z){		
+	if ( ( x->indr != y->indr ) || ( x->indc != y->indc ) ) return NULL;
 	z->indr = x->indr;
 	z->indc = x->indc;
 	for(i32 i=0 ; i<(x->indr) ; i++)
 		for(i32 j=0 ; j<(x->indc) ; j++)
 			z->data[i][j] = x->data[i][j] - y->data[i][j]; 
-	return 1;
+	return x;
 }
 
-i32 Mmul(matrix* x,matrix* y, matrix* z){
-	if ( x->indc != y->indr) {
-		printf("dimension mismatch for computing multiplication!");
-		return 0;
-	}
+matrix* Mmul(matrix* x,matrix* y, matrix* z){
+	if ( x->indc != y->indr) return NULL;
 	z->indr = x->indr;
 	z->indc = y->indc;
 	for(i32 i=0 ; i<(z->indr) ; i++)
@@ -50,6 +41,6 @@ i32 Mmul(matrix* x,matrix* y, matrix* z){
 				s += x->data[i][l]*y->data[l][j];
 			z->data[i][j] = s;
 			}
-	return 1;
+	return x;
 }
 

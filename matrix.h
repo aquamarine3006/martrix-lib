@@ -9,6 +9,6 @@ typedef struct{
 } matrix;
 
 void Mprint(matrix*);
-i32 Msum(matrix*,matrix*,matrix*);
-i32 Msub(matrix*,matrix*,matrix*);
-i32 Mmul(matrix*,matrix*,matrix*);
+matrix* Msum(matrix*,matrix*,matrix*);
+matrix* Msub(matrix*,matrix*,matrix*);
+matrix* Mmul(matrix*,matrix*,matrix*);
