@@ -2,6 +2,7 @@
 #define MATRIX_H
 #include<stdint.h>
 #define MFORMAT(dimr,dimc, ...) ((i32[dimr][dimc]){__VA_ARGS__})
+#define MAT(rows, cols, ...) Mmake(rows, cols, MFORMAT(rows, cols, __VA_ARGS__))
 
 typedef int8_t i8;
 typedef uint8_t u8;
