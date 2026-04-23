@@ -6,6 +6,7 @@ int main(void){
 			 		      {3,4,3,56},
 			 	              {2,2,46,8},
 			         	      {2,3,45,6}));
-	Mprint(ONE);
+	matrix* two = Mmul(Mones(4),Mones(4));	
+	Mprint(two);
 	return 0;
 }

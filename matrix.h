@@ -15,13 +15,13 @@ typedef struct{
 
 matrix* Mmake(u8 rows,u8 cols,i32 arr[rows][cols]);
 void Mprint(const matrix*);
-matrix* Msum(const matrix*,const matrix*,matrix*);
-matrix* Msub(const matrix*,const matrix*,matrix*);
-matrix* Mmul(const matrix*,const matrix*,matrix*);
-void Mcpy(const matrix*,matrix*);
-void Mzeros(matrix*,const i32);
-void Mones(matrix*,const i32);
-void Mscalar_mul(const i32,const matrix*,matrix*);
-void Mtranspose(const matrix*,matrix*);
+matrix* Msum(const matrix*,const matrix*);
+matrix* Msub(const matrix*,const matrix*);
+matrix* Mmul(const matrix*,const matrix*);
+matrix* Mcpy(const matrix*);
+matrix* Mzeros(const i32,const i32);
+matrix* Mones(const i32);
+matrix* Mscalar_mul(const i32,const matrix*);
+matrix* Mtranspose(const matrix*);
 
 #endif
